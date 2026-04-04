@@ -1,0 +1,20 @@
+battery_monitor:
+  ros__parameters:
+    # YOUR VOLTAGE DIVIDER VALUES (Change these!)
+    voltage_divider_r1: 150000.0  # Top resistor (Ohms)
+    voltage_divider_r2: 22000.0  # Bottom resistor (Ohms)
+    
+    # Battery voltage range (LiFePO4)
+    min_voltage: 12.0   # Cutoff
+    max_voltage: 13.0   # Full charge
+    
+    # I2C addresses
+    ads1015_address: 0x49 # Working ADS1015 (0x48 is faulty)
+    adc_channel: 3          # A3 (A0 used by blade RPM)
+    gpio_extender_address: 0x27 # MCP23017 (confirmed via i2cdetect)
+    
+    # ADC gain (1 = ±4.096V range)
+    adc_gain: 1
+    
+    # Publishing rate (Hz)
+    publish_rate: 1.0

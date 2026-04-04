@@ -1,0 +1,24 @@
+# IMU Reader Configuration
+# Supported types: bno085, mpu6050
+
+imu_node:
+  ros__parameters:
+    # IMU type: "bno085" (production) or "mpu6050" (prototype)
+    imu_type: "bno085"
+    
+    # I2C bus number (1 for Raspberry Pi)
+    i2c_bus: 1
+    
+    # I2C address in decimal
+    # BNO085: 74 (0x4A) or 75 (0x4B)
+    # MPU6050: 104 (0x68) or 105 (0x69)
+    i2c_address: 74
+    
+    # Publishing rate in Hz
+    publish_rate: 20.0
+    
+    # TF frame ID
+    frame_id: "imu_link"
+    
+    # Madgwick filter gain (MPU6050 only, ignored for BNO085)
+    madgwick_beta: 0.1

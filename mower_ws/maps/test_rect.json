@@ -1,0 +1,12 @@
+{
+  "id": "test_rect",
+  "name": "test_rect",
+  "origin_latlon": [0.0, 0.0],
+  "boundary_xy": [
+    [-1.5, -1.0],
+    [ 1.5, -1.0],
+    [ 1.5,  1.0],
+    [-1.5,  1.0]
+  ],
+  "created_at": "manual_test"
+}

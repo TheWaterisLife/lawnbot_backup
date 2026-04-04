@@ -1,0 +1,35 @@
+# motor_config.yaml
+
+server:
+  host: "0.0.0.0"
+  port: 8766
+  watchdog_timeout_s: 1.0   # if no command in this time -> stop all motors
+
+gpio:
+  pwm_frequency_hz: 1000
+
+motors:
+  right:
+    r_en: 23
+    l_en: 24
+    r_pwm: 12
+    l_pwm: 19
+    max_duty: 1.0
+    invert: false
+
+  left:
+    r_en: 5
+    l_en: 6
+    r_pwm: 13
+    l_pwm: 18
+    max_duty: 1.0
+    invert: false
+
+  blade:
+    r_en: 20
+    l_en: 16
+    r_pwm: 26
+    l_pwm: 21
+    max_duty: 1.0
+    invert: false
+

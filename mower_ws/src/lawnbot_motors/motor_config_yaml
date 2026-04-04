@@ -1,0 +1,43 @@
+# mower_ws/src/lawnbot_motors/motor_config.yaml
+
+server:
+  host: "0.0.0.0"
+  port: 8766
+  watchdog_timeout_s: 2.0   # optional safety: auto-stop if app disconnects / no cmd
+
+gpio:
+  pwm_frequency_hz: 1000
+
+profiles:
+  # What "TURN ON" means:
+  # wheel speeds in [-1..+1], blade in [0..+1] (or [-1..+1] if you want reverse)
+  default_on:
+    right: 0.6
+    left: 0.6
+    blade: 1.0
+
+motors:
+  right:
+    r_en: 23
+    l_en: 24
+    r_pwm: 12
+    l_pwm: 19
+    max_duty: 1.0
+    invert: false
+
+  left:
+    r_en: 5
+    l_en: 6
+    r_pwm: 13
+    l_pwm: 18
+    max_duty: 1.0
+    invert: false
+
+  blade:
+    r_en: 4
+    l_en: 21
+    r_pwm: 16
+    l_pwm: 20
+    max_duty: 1.0
+    invert: false
+

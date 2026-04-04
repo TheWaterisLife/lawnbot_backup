@@ -1,0 +1,52 @@
+# =============================================================================
+# Sensor Integration Configuration
+# =============================================================================
+
+# =============================================================================
+# IMU Node Configuration
+# =============================================================================
+imu_node:
+  ros__parameters:
+    # IMU type: "mpu6050" (prototype) or "bno085" (production)
+    imu_type: "mpu6050"
+    
+    # I2C configuration
+    i2c_bus: 1
+    i2c_address: -1  # -1 = auto (0x68 for MPU6050, 0x4A for BNO085)
+    
+    # Publishing
+    publish_rate: 100.0  # Hz
+    frame_id: "imu_link"
+    
+    # Madgwick filter settings (MPU6050 only)
+    madgwick_beta: 0.1
+
+# =============================================================================
+# Wheel Odometry Node Configuration
+# =============================================================================
+wheel_odom_node:
+  ros__parameters:
+    # GPIO pins for encoders (BCM numbering)
+    # WARNING: Do NOT use motor pins (5,6,12,13,18,19,23,24)
+    left_encoder_a: 17
+    left_encoder_b: 27
+    right_encoder_a: 22
+    right_encoder_b: 4
+    
+    # Physical parameters
+    wheel_radius: 0.05    # Sprocket radius in meters (TBD - measure)
+    track_width: 0.24     # Distance between tracks in meters
+    
+    # Encoder parameters (FIT0403: 11 PPR * 90:1 * 4 quadrature)
+    encoder_cpr: 3960
+    
+    # Publishing
+    publish_rate: 50.0    # Hz
+    frame_id: "odom"
+    child_frame_id: "base_link"
+    
+    # TF
+    publish_tf: false     # Let EKF publish odom->base_link transform
+
+# Note: Static transforms are handled in launch files, not parameters
+

@@ -1,0 +1,15 @@
+[Unit]
+Description=ROS2 Battery Monitor Node
+After=network.target
+
+[Service]
+Type=simple
+User=lawnbot
+WorkingDirectory=/home/lawnbot
+Environment="ROS_DOMAIN_ID=0"
+ExecStart=/bin/bash -c "source /opt/ros/jazzy/setup.bash && source /home/lawnbot/mower_ws/install/setup.bash && ros2 launch lawn_mower_battery battery_monitor.launch.py"
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

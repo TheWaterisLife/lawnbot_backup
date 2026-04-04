@@ -1,0 +1,51 @@
+# mower_ws/src/lawnbot_motors/motor_config.yaml
+
+server:
+  host: "0.0.0.0"
+  port: 8766
+  watchdog_timeout_s: 9999999   # optional safety: auto-stop if app disconnects / no cmd
+
+gpio:
+  pwm_frequency_hz: 1000
+
+teleop:
+  max_wheel: 1        # manual max speed (0.4–0.6 recommended for 7kg tracks)
+  deadzone: 0.08        # ignore tiny joystick noise
+  ramp_per_sec: 1.5     # smoothing (0 = off). 1.5 means can change ~1.5 units/sec
+
+server:
+  watchdog_timeout_s: 5   # if no joystick packets for 0.4s -> stop
+
+profiles:
+  # What "TURN ON" means:
+  # wheel speeds in [-1..+1], blade in [0..+1] (or [-1..+1] if you want reverse)
+  default_on:
+    right: 1
+    left: 1
+    blade: 0.1
+
+motors:
+  right:
+    r_en: 23
+    l_en: 24
+    r_pwm: 12
+    l_pwm: 19
+    max_duty: 1.0
+    invert: false
+
+  left:
+    r_en: 5
+    l_en: 6
+    r_pwm: 13
+    l_pwm: 18
+    max_duty: 1.0
+    invert: false
+
+  blade:
+    r_en: 20
+    l_en: 16
+    r_pwm: 26
+    l_pwm: 21
+    max_duty: 1.0
+    invert: false
+

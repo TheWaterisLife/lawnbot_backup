@@ -1,0 +1,41 @@
+# =============================================================================
+# Mower Navigation Configuration
+# =============================================================================
+
+# Note: Boundary recording/loading is handled by mower_mapping (map_server)
+# on WebSocket port 8770. See bmad-mower-mapping for details.
+
+coverage_planner_node:
+  ros__parameters:
+    active_boundary: "lawn_boundary"
+    
+    # Mowing parameters
+    cutting_width: 0.20      # meters
+    overlap_ratio: 0.10      # 10% overlap
+    boundary_margin: 0.15    # meters from edge
+    mowing_angle: 0.0        # degrees (0 = E-W, 90 = N-S)
+
+motor_controller_node:
+  ros__parameters:
+    # WebSocket connection to lawnbot_motors server
+    ws_host: "localhost"
+    ws_port: 8766
+    
+    # Speed limits
+    max_speed: 1.0
+    watchdog_timeout: 0.5    # Stop if no command
+    
+    # Robot geometry
+    track_width: 0.24        # meters
+    max_linear_velocity: 0.8  # m/s
+    max_angular_velocity: 1.5 # rad/s
+
+obstacle_handler_node:
+  ros__parameters:
+    # Safety zones
+    critical_distance: 0.3   # meters - emergency stop
+    warning_distance: 0.8    # meters - slow down
+    detection_distance: 2.0  # meters - track
+    
+    # Behavior
+    filter_velocity: true    # Filter cmd_vel based on obstacles

@@ -1,0 +1,26 @@
+{
+  "id": "test_valid_rectangle",
+  "name": "test_valid_rectangle",
+  "origin_latlon": [
+    45.49546383333333,
+    -73.567484
+  ],
+  "raw_points_xy": [
+    [0.0, 0.0],
+    [6.0, 0.0],
+    [6.0, 4.0],
+    [0.0, 4.0],
+    [0.0, 0.0]
+  ],
+  "boundary_xy": [
+    [0.0, 0.0],
+    [6.0, 0.0],
+    [6.0, 4.0],
+    [0.0, 4.0],
+    [0.0, 0.0]
+  ],
+  "raw_count": 5,
+  "boundary_count": 5,
+  "created_at": "2026-02-12T22:30:00"
+}
+

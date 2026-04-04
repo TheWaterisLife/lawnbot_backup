@@ -1,0 +1,14 @@
+# ROS / colcon
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.pyc
+
+# Virtual env
+venv/
+
+# Editor
+.vscode/

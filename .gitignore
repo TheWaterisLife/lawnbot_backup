@@ -1,0 +1,44 @@
+# ROS / colcon
+**/build/
+**/install/
+**/log/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+.venv/
+venv/
+*.egg-info/
+.eggs/
+dist/
+*.egg
+
+# Local caches / logs
+.cache/
+*.log
+str2str.trace
+.bash_history
+
+# Old nested mower_ws git dir (backup after flattening repo)
+mower_ws/.git_mower_ws_previous/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+.sudo_as_admin_successful
+
+# RTCM / binary streams (local test artifacts)
+*.rtcm
+*.rtcm3
+t.rtcm3
+
+# Secrets / local config (uncomment if you add these)
+# .env
+# *.pem
+
+# Large / generated (optional — remove line if you want maps in repo)
+# maps/
