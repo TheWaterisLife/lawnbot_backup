@@ -12,3 +12,17 @@ venv/
 
 # Editor
 .vscode/
+
+# BMAD documents
+bmad-camera/
+bmad-imu-reader/
+bmad-integration/
+bmad-lawn-mower-battery/
+bmad-lawnbot-comms/
+bmad-lawnbot-motors/
+bmad-mower-bringup/
+bmad-mower-mapping/
+bmad-navigation/
+bmad-obstacle-detection/
+bmad-rtk-reader/
+bmad-wheel-encoder/
